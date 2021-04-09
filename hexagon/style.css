@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+}
+.scene{
+    perspective: 2400px;
+}
+.box{
+    transform-style: preserve-3d;
+    height: 200px;
+    width: 200px;
+    /* background-color: rgba(0, 128, 0, .2); */
+    background-color: transparent;
+    position: relative;
+    transition: transform 50s;
+    /* top: -200px; */
+    /* transform: rotateX(120deg); */
+
+}
+.box:hover{
+    transform: rotateX(360deg);
+}
+.face{
+    width: 100px;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    background: repeating-linear-gradient(to right, #fff, #fff 1px, transparent 1px, transparent 16px);
+    background-color: transparent !important;
+    transform-style: preserve-3d;
+
+    /* background-color: red; */
+}
+.face-1{
+    background-color: red;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background: repeating-linear-gradient(to right, #000, #000 1px, transparent 1px, transparent 20px); */
+}
+.face-2{
+    background-color: yellow;
+    left: 50px;
+    transform-origin: left;
+    transform: rotateY(120deg);
+}
+.face-3{
+    background-color: blue;
+    right: 50px;
+    transform-origin: right;
+    transform: rotateY(-120deg); 
+}
+.face-4{
+    background-color: grey;
+    right: 50px;
+    transform: translateZ(-173.21px);
+}
+.face-5{
+    background-color: pink;
+    right: 50px;
+    /* Translate Z is calculated using sin theta of half of an angle of hexagon */
+    transform: translateZ(-173.21px) rotateY(-120deg);
+    transform-origin: left;
+}
+.face-6{
+    background-color: purple;
+    right: 50px;
+    transform: translateZ(-173.21px) rotateY(120deg);
+    transform-origin: right;
+}
+.face:before{
+    content: "";
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 50px;
+    transform-origin: bottom;
+    transform: rotateX(90deg);
+    border-top-right-radius: 100%;
+}
+.face-2:before, .face-3:before, .face-4:before{
+    transform: rotateX(-90deg);
+}

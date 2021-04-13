@@ -91,3 +91,8 @@ body{
 .face-2:before, .face-3:before, .face-4:before{
     transform: rotateX(-90deg);
 }
+.instructions{
+    color: #fff;
+    position: absolute;
+    bottom: 50px;
+}
